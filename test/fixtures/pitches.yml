@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  numeber: 1
+  title: MyString
+  problem: MyString
+  solution: MyString
+  goal: MyString
+  need: MyString
+  soft_name: MyString
+
+two:
+  numeber: 1
+  title: MyString
+  problem: MyString
+  solution: MyString
+  goal: MyString
+  need: MyString
+  soft_name: MyString

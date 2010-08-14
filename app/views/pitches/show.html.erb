@@ -1,0 +1,40 @@
+<p class="notice"><%= notice %></p>
+
+<p>
+  <b>Numeber:</b>
+  <%= @pitch.numeber %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @pitch.title %>
+</p>
+
+<p>
+  <b>Problem:</b>
+  <%= @pitch.problem %>
+</p>
+
+<p>
+  <b>Solution:</b>
+  <%= @pitch.solution %>
+</p>
+
+<p>
+  <b>Goal:</b>
+  <%= @pitch.goal %>
+</p>
+
+<p>
+  <b>Need:</b>
+  <%= @pitch.need %>
+</p>
+
+<p>
+  <b>Soft name:</b>
+  <%= @pitch.soft_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_pitch_path(@pitch) %> |
+<%= link_to 'Back', pitches_path %>
