@@ -7,6 +7,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
+      format.json { render :json => @events }
     end
   end
 
@@ -18,6 +19,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @event }
+      format.json { render :json => @event }
     end
   end
 
@@ -29,6 +31,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @event }
+      format.json { render :json => @event }
     end
   end
 
@@ -46,9 +49,11 @@ class EventsController < ApplicationController
       if @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
+        format.json { render :json => @event, :status => :created, :location => @event }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
+        format.json { render :json => @even.errors, :status => :unporcessable_entity }
       end
     end
   end
@@ -62,9 +67,11 @@ class EventsController < ApplicationController
       if @event.update_attributes(params[:event])
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
         format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
+        format.json { render :xml => @event.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,6 +85,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(events_url) }
       format.xml  { head :ok }
+      format.json { head :ok }
     end
   end
 end

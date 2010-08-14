@@ -7,6 +7,7 @@ class MembershipsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @memberships }
+      format.json { render :json => @memberships }
     end
   end
 
@@ -18,6 +19,7 @@ class MembershipsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @membership }
+      format.json { render :json => @membership }
     end
   end
 
@@ -29,6 +31,7 @@ class MembershipsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @membership }
+      format.json { render :json => @membership }
     end
   end
 
@@ -46,9 +49,11 @@ class MembershipsController < ApplicationController
       if @membership.save
         format.html { redirect_to(@membership, :notice => 'Membership was successfully created.') }
         format.xml  { render :xml => @membership, :status => :created, :location => @membership }
+        format.json { render :xml => @membership, :status => :created, :location => @membership }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @membership.errors, :status => :unprocessable_entity }
+        format.json { render :json => @membership.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -62,9 +67,11 @@ class MembershipsController < ApplicationController
       if @membership.update_attributes(params[:membership])
         format.html { redirect_to(@membership, :notice => 'Membership was successfully updated.') }
         format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @membership.errors, :status => :unprocessable_entity }
+        format.json { render :json => @membership.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,6 +85,7 @@ class MembershipsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(memberships_url) }
       format.xml  { head :ok }
+      format.json { head :ok }
     end
   end
 end
