@@ -56,7 +56,7 @@ var pitchNight = {
 							var need = $(this).find("need").text();
 							switch(type){
 								case "Pitch":
-										elem.append("<li>"+name+" wants to '<i>"+ goal +"</i> and needs <i>"+ +"</i>.</li>");
+										elem.append("<li>"+name+" wants to '<i>"+ goal +"</i> and needs <i>"+ need +"</i>.</li>");
 									break;
 								case "Vote":
 										
