@@ -8,6 +8,8 @@ Pitchnight::Application.routes.draw do |map|
   resources :events
 
   resources :users
+  
+  resources :activities
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

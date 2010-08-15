@@ -1,0 +1,15 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @activities.each do |activity| %>
+  <tr>
+    <td><%= activity.to_s %></td>
+    <td><%= link_to 'Show', activity %></td>
+  </tr>
+<% end %>
+</table>
