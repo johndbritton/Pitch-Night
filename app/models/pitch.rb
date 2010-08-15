@@ -7,4 +7,8 @@ class Pitch < ActiveRecord::Base
 
   has_many :votes
   has_many :voters, :through => :votes, :source => :user
+
+  def vote_count
+    votes.count
+  end
 end
