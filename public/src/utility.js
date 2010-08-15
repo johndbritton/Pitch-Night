@@ -48,7 +48,7 @@ var pitchNight = {
 		$.ajax({url: requestUrl+"."+pitchNight.ajaxDataType[1],
 			success: function(feed){
 				switch(rootObject){
-					case 'activity':var type="Vote";
+					case 'activity':var type="Pitch";
 						$(feed).find("record").each(function(){
 							if($(this).find("goal"))type="Pitch";
 							var name = $(this).find("soft-name").text();
