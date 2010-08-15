@@ -44,7 +44,7 @@ var pitchNight = {
 	baseUrl: "http://high-wind-14.heroku.com/",
 	getListUrl: ["activities","users","pitches","","pitches",""],
 	requestRootObject: ["activity","user","pitch"],
-	getListRequest: function(requestUrl,rootObject){var elem = $("#content");
+	getListRequest: function(requestUrl,rootObject){var elem = $(".edgetoedge","#content");
 		$.ajax({url: requestUrl+"."+pitchNight.ajaxDataType[1],
 			success: function(feed){
 				switch(rootObject){
@@ -54,15 +54,16 @@ var pitchNight = {
 					case 'user':
 						$(feed).find("user").each(function(){
 							var username = $(this).find("name").text();var handle = $(this).find("twitter").text();var imgUrl = pitchNight.handleImageUrls[0]+handle;
-							elem.append("<ul class=\"edgetoedge\"><li><img src=\""+imgUrl+"\" alt=\""+username+"\"/></li><li>"+username+"</li><li><a href=\""+pitchNight.handleUrls[0]+""+handle+"\"><img src=\"src/twitter.png\" /></a></li></ul>");
+							elem.append("<li><img src=\""+imgUrl+"\" alt=\""+username+"\"/> "+username+"  <img src=\"src/twitter.png\" /></li>");
 						});
+						
 						break;
 					case 'pitch':var count = 1;
 						$(feed).find("pitch").each(function(){
 							var userid = $(this).find("user_id").text();var title = $(this).find("title").text();var imgUrl;
 							if("null" == userid){var name = $(this).find("soft_name").text();title= "Pitch #"+count+" by "+name; imgUrl="";}
 							else{imgUrl = pitchNight.handleImageUrls[0]+$(this).find("user_id").find("twitter").text(); var username=$(this).find("user_id").find("name").text();}
-							elem.append("<ul class=\"edgetoedge\"><li><img src=\""+imgUrl+"\" alt=\""+username+"\"/></li><li>"+title+"</li><li>/*<a href=\""+pitchNight.handleUrls[0]+""+handle+"\"><img src=\"src/twitter.png\" /></a></li></ul>");
+							elem.append("<li><img src=\""+imgUrl+"\" alt=\""+username+"\"/> "+title+" <img src=\"src/twitter.png\" /></li>");
 							count += 1;
 						});
 						break;
