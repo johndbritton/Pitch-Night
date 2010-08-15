@@ -5,10 +5,10 @@ function createPitch(number) {
               dataType : 'json',
               data: {
                 "pitch":{
-            	 "soft_name":$("#name").val(),
+                  "soft_name":$("#name").val(),
                   "title":$("#pitchIdea").val(),
-                  "needs":$("#need").val(),
-				  "number":number
+                  "need":$("#need").val(),
+                  "number":number
                 }
               },
               error : function(XMLHttpRequest, textStatus, errorThrown) {
