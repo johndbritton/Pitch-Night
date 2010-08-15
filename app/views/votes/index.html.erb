@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>Pitch Id</th>
+    <th>User Id</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +11,8 @@
 
 <% @votes.each do |vote| %>
   <tr>
+    <td><%= vote.pitch.id %></td>
+    <td><%= vote.user.id %></td>
     <td><%= link_to 'Show', vote %></td>
     <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
     <td><%= link_to 'Destroy', vote, :confirm => 'Are you sure?', :method => :delete %></td>

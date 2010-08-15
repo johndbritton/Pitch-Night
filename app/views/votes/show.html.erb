@@ -1,5 +1,14 @@
 <p class="notice"><%= notice %></p>
 
+<p>
+  <b>Pitch Id:</b>
+  <%= @vote.pitch.id %>
+</p>
+
+<p>
+  <b>User Id:</b>
+  <%= @vote.user.id %>
+</p>
 
 <%= link_to 'Edit', edit_vote_path(@vote) %> |
 <%= link_to 'Back', votes_path %>
