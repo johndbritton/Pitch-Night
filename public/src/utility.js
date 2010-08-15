@@ -49,7 +49,7 @@ var pitchNight = {
 			success: function(feed){
 				switch(rootObject){
 					case 'activity':var type="Pitch";
-						$(feed).find("record").each(function(){
+						$(feed).find("pitch").each(function(){
 							if($(this).find("goal"))type="Pitch";
 							var name = $(this).find("soft-name").text();
 							var goal = $(this).find("title").text();
