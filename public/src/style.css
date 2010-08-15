@@ -1,0 +1,152 @@
+
+.tl{
+	-moz-border-radius-topleft:5px;	
+	-webkit-border-top-left-radius: 5px;
+}
+
+.tr{
+	-moz-border-radius-topright:5px;	
+	-webkit-border-top-right-radius: 5px;
+}
+
+.bl{
+	-moz-border-radius-bottomleft:5px;	
+	-webkit-border-bottom-left-radius: 5px;
+}
+
+.br{
+	-moz-border-radius-bottomright:5px;	
+	-webkit-border-bottom-right-radius: 5px;
+}
+
+.center{
+	text-align: center;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+a:active
+{
+  outline: none;
+}
+
+a:focus
+{
+  -moz-outline-style: none;
+}
+
+div.topBar.toolbar{
+	background-image: url(header_bg.png);
+}
+
+div#bottomBar.toolbar{
+	background-color: #000;
+	width: 700px;
+	margin: 0 auto;
+}
+
+ul#edgetoedge li.arrow{
+	background-color: #000;
+}
+
+#jqt div.bottomBar ul{
+	float: left;
+	border: none;
+	margin: 0;
+	padding: 0;
+	margin-top: -10px;
+	/*margin-left: 0.5em;*/
+	width: 100%;
+}
+
+#jqt div.bottomBar ul li{
+	float: left;
+	border: none;
+	background: none;
+	background-color: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	/*margin-left: 2.2em;*/
+	margin-left:15%;
+
+}
+
+#jqt div.bottomBar ul li a{
+	margin: 0;
+	padding: 0;
+
+}
+
+#jqt ul li a.active{
+	background-color: #53b401;
+    color: #fff;
+	text-align: center;
+	
+}
+
+#jqt ul#activitiesFilter{
+	display: block;
+	margin:0 auto;
+	/*margin-left: 10%;*/
+	width: 100%;
+	float: left;
+	text-align:center;
+	border: none;
+	padding: 0;
+	background: #fffeff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+#jqt ul#activitiesFilter li a{
+	background-color: #eaeaea;
+	margin-left: 10px;
+	text-align: center;
+	padding: 0;
+	font-size: 0.7em;
+	border: 1px solid #29548c;
+	color: #29548c;
+	font-weight: bold;
+	padding-top:10px;
+	padding-bottom:10px;
+	width: 100%;
+}
+
+#jqt ul#activitiesFilter li{
+	display: block;
+	width: 40%;
+	float: left;
+	background: none;
+	border: none;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	padding: 0;
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#jqt ul.edgetoedge{
+	border: none;
+}
+
+#jqt ul.edgetoedge li{
+	color: #000;
+	font-size: 0.7em;
+	/*margin-top: 3px;*/
+	background: #fffeff;
+}
+
+
+#jqt div.use-bottom-toolbar{
+	background-color: #a9b7c8;
+}
+
+#jqt ul.edgetoedge li{
+	border:none ;
+	border-top: 1px solid #c0c0c0;	
+
+}
