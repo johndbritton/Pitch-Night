@@ -44,12 +44,27 @@ var pitchNight = {
 	baseUrl: "http://high-wind-14.heroku.com/",
 	getListUrl: ["activities","users","pitches","","pitches",""],
 	requestRootObject: ["activity","user","pitch"],
-	getListRequest: function(requestUrl,rootObject){var elem = $(".edgetoedge","#content");
+	getListRequest: function(requestUrl,rootObject){var elem = $(".edgetoedge","#content");elem.html("");
 		$.ajax({url: requestUrl+"."+pitchNight.ajaxDataType[1],
 			success: function(feed){
 				switch(rootObject){
-					case 'activity':
-						
+					case 'activity':var type="Vote";
+						$(feed).find("record").each(function(){
+							if($(this).find("goal"))type="Pitch";
+							var name = $(this).find("soft-name").text();
+							var goal = $(this).find("goal").text();
+							var need = $(this).find("need").text();
+							switch(type){
+								case "Pitch":
+										elem.append("<li>"+name+" wants to '<i>"+ goal +"</i> and needs <i>"+ +"</i>.</li>");
+									break;
+								case "Vote":
+										
+									break;
+							}
+							
+							
+						});
 						break;
 					case 'user':
 						$(feed).find("user").each(function(){
@@ -60,10 +75,9 @@ var pitchNight = {
 						break;
 					case 'pitch':var count = 1;
 						$(feed).find("pitch").each(function(){
-							var userid = $(this).find("user_id").text();var title = $(this).find("title").text();var imgUrl;
-							if("null" == userid){var name = $(this).find("soft_name").text();title= "Pitch #"+count+" by "+name; imgUrl="";}
-							else{imgUrl = pitchNight.handleImageUrls[0]+$(this).find("user_id").find("twitter").text(); var username=$(this).find("user_id").find("name").text();}
-							elem.append("<li><img src=\""+imgUrl+"\" alt=\""+username+"\"/> "+title+" <img src=\"src/twitter.png\" /></li>");
+							var userid = $(this).find("user_id").text();var title = $(this).find("title").text();
+							var name = $(this).find("soft-name").text();title= "Pitch #"+count+" by "+name;
+							elem.append("<li>"+title+"</li>");
 							count += 1;
 						});
 						break;
@@ -74,7 +88,7 @@ var pitchNight = {
 		}
 };
 $(function(){
-	pitchNight.setState(pitchNight.pageList[1],pitchNight.getListUrl[1], pitchNight.requestRootObject[1],pitchNight.pageLinks[1]);
+	pitchNight.setState(pitchNight.pageList[0],pitchNight.getListUrl[0], pitchNight.requestRootObject[0],pitchNight.pageLinks[0]);
 	$("#activitiesLink").click(function(){pitchNight.setState(pitchNight.pageList[0],pitchNight.getListUrl[0], pitchNight.requestRootObject[0],pitchNight.pageLinks[0]);return false;});
 	$("#peopleLink").click(function(){pitchNight.setState(pitchNight.pageList[1],pitchNight.getListUrl[1], pitchNight.requestRootObject[1],pitchNight.pageLinks[1]);return false;});
 	$("#pitchesLink").click(function(){pitchNight.setState(pitchNight.pageList[2],pitchNight.getListUrl[2], pitchNight.requestRootObject[2],pitchNight.pageLinks[2]);return false;});
