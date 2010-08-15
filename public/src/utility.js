@@ -52,7 +52,7 @@ var pitchNight = {
 						$(feed).find("record").each(function(){
 							if($(this).find("goal"))type="Pitch";
 							var name = $(this).find("soft-name").text();
-							var goal = $(this).find("goal").text();
+							var goal = $(this).find("title").text();
 							var need = $(this).find("need").text();
 							switch(type){
 								case "Pitch":
